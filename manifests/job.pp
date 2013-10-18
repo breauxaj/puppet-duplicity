@@ -20,12 +20,12 @@ define duplicity::job (
   cron { "duplicity-${name}":
     ensure   => present,
     command  => "/usr/bin/job-${name}.sh > /dev/null 2>&1",
-    user     => ${runas},
-    minute   => ${minute},
-    hour     => ${hour},
-    monthday => ${monthday},
-    month    => ${month},
-    weekday  => ${weekday},
+    user     => $runas,
+    minute   => $minute,
+    hour     => $hour,
+    monthday => $monthday,
+    month    => $month,
+    weekday  => $weekday,
   }
 
 }
