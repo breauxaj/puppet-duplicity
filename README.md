@@ -22,3 +22,11 @@ duplicity::job { 'backup124':
   $minute = '30'
 }
 ```
+
+License
+-------
+GPL3
+
+Contact
+-------
+breauxaj AT gmail DOT com
