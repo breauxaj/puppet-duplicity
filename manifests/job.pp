@@ -9,6 +9,10 @@ define duplicity::job (
   $month = '*',
   $weekday = '*'
 ) {
+  $depends = $::operatingsystem ? {
+    /(?i-mx:centos|fedora|redhat|scientific)/ => 'duplicity',
+  }
+
   file { "/usr/bin/job-${name}.sh":
     ensure  => present,
     owner   => 'root',
@@ -26,6 +30,7 @@ define duplicity::job (
     monthday => $monthday,
     month    => $month,
     weekday  => $weekday,
+    require  => Package[$depends],
   }
 
 }
